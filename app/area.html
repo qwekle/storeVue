@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Calculating Area - Vue.js in Action</title>
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/app.css" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <p>
+        Area is equal to: {{ area }}
+      </p>
+      <p>
+        <button v-on:click="length += 1">Add length</button>
+        <button v-on:click="width += 1">Add width</button>
+      </p>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/2789eb5531.js"></script>
+  <script src="./js/vue.min.js"></script>
+  <script>
+    // Переменная для включения и выключения функций обратного вызова
+    var APP_LOG_LIFECYCLE_EVENTS = true;
+    var webstore = new Vue({
+      el: "#app",
+      data: {
+        length: 5,
+        width: 3
+      },
+      computed: {
+        area: function () {
+          return this.length * this.width;
+        }
+      },
+      watch: {
+        length: function (newVal, oldVal) {
+          console.log('The old value of length was: ' + oldVal + '\nThe new value of length is: ' + newVal);
+        },
+        width: function (newVal, oldVal) {
+          console.log('The old value of width was: ' + oldVal + '\nThe new value of width is: ' + newVal);
+        },
+        area: function (newVal, oldVal) {
+          console.log('The old value of area was: ' + oldVal + '\nThe new value of area is: ' + newVal);
+        }
+      },
+      beforeUpdate: function () {
+        if (APP_LOG_LIFECYCLE_EVENTS) {
+          console.log("All those data changes happened before the output gets updated.");
+        }
+      },
+      updated: function () {
+        if (APP_LOG_LIFECYCLE_EVENTS) {
+          console.log("updated");
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

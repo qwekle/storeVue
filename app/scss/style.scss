@@ -1,0 +1,47 @@
+html{
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+#app{
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+header h1{
+    padding: 10px 20px;
+}
+.cart {
+  padding: 20px 50px;
+}
+.boxes {
+  margin-top: 20px;
+}
+
+.verify {
+  margin-top: 20px;
+}
+main{
+    margin-top: 30px;
+}
+.radio{
+    input{
+        margin-left: 10px;
+    }
+}
+.submit {
+  margin-top:20px;
+  float: right;
+}
+
+.pagecheckout {
+  padding: 20px 50px;
+}
+.description {
+  font-size: 150%;
+  margin-top:50px;
+}
