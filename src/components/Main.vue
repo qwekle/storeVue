@@ -28,9 +28,9 @@
               <span
                 class="inventory-message"
                 v-else-if="product.availableInventory - cartCount(product.id) < 5"
-                key
+                key=''
               >Only {{product.availableInventory - cartCount(product.id)}} left!</span>
-              <span class="inventory-message" v-else key>Buy Now!</span>
+              <span class="inventory-message" v-else key=''>Buy Now!</span>
             </transition>
             <div class="rating">
               <span

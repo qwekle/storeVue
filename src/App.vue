@@ -1,7 +1,9 @@
 <template>
   <div>
     <transition name="bounce" mode="out-in">
+    <transition name='fade' mode='out-in'>
       <router-view></router-view>
+    </transition>
     </transition>
   </div>
 </template>
@@ -16,6 +18,16 @@ export default {
 </script>
 
 <style scoped>
+.fade-enter-active, 
+.fade-leave-active{
+  transition: opacity .5s ease-out;
+}
+.fade-enter,
+.fade-leave-to{
+  opacity: 0;
+}
+
+
 .bounce-enter-active {
   animation: shake 0.72s cubic-bezier(0.37, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
